@@ -1,0 +1,31 @@
+{
+  "dependencies": {
+    "ionic": "~1.2.0",
+    "angular": "~1.4.5",
+    "angular-animate": "~1.4.5",
+    "angular-sanitize": "~1.4.5",
+    "angular-ui-router": "~0.2.15",
+    "ngCordova": "~0.1.17-alpha",
+    "angular-dynamic-locale": "~0.1.27",
+    "angular-translate": "~2.8.1",
+    "angular-translate-loader-static-files": "~2.8.1",
+    "localforage": "~1.3.1",
+    "angular-translate-loader-partial": "~2.8.1",
+    "angular-material": "~1.0.2",
+    "material-design-iconic-font": "~2.2.0",
+    "ionic-ion-horizontal-scroll-cards": "*",
+    "angular-swiper": "~0.3.2",
+    "ionic-modal-select": "~1.1.2"
+  },
+  "devDependencies": {
+    "angular-mocks": "~1.4.5"
+  },
+  "resolutions": {
+    "angular": "~1.4.5",
+    "angular-animate": "~1.4.5",
+    "angular-sanitize": "~1.4.5",
+    "angular-ui-router": "~0.2.15"
+  },
+  "name": "ecogiv-seller",
+  "private": true
+}

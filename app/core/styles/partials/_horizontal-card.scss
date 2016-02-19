@@ -1,0 +1,17 @@
+.horizontal-cards {
+    -webkit-overflow-scrolling: touch;
+    overflow: auto;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    .mycard {
+        width: 80%;
+        max-width: 80%;
+        display: inline-block;
+        margin: 0px 10px;
+        img {
+            width: 100%;
+            max-width: 100%;
+        }
+    }
+}

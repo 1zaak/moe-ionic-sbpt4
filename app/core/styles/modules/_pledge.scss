@@ -1,0 +1,263 @@
+.progress-bar-container {
+    padding: 20px;
+    .progress {
+        width: 100%;
+        height: 20px;
+    }
+    .progress-wrap {
+        background: #d7999a;
+        margin: 0;
+        overflow: hidden;
+        position: relative;
+        border: 2px solid #ccc;
+        .progress-bar {
+            background: #d7d7d7;
+            left: 0;
+            position: absolute;
+            top: 0;
+        }
+    }
+}
+
+.pledge-list {
+    padding: 10px;
+    md-whiteframe {
+        margin-bottom: 40px;
+    }
+    .pledge-content {
+        .md-title {
+            margin-top: 10px;
+            margin-bottom: 0px;
+        }
+    }
+    .pledge-owner {
+        margin-top: -50px;
+        .md-avatar {
+            border-radius: 50%;
+            border: 2px solid #fff;
+        }
+    }
+    .pledge-stats {
+        .stats {
+            text-align: center;
+            p {
+                margin: 0px;
+                color: #8bbfa6;
+            }
+            .v {
+                font-size: 24px;
+                font-weight: bold;
+            }
+            .t {
+                font-size: 16px;
+                margin-top: 5px;
+            }
+        }
+    }
+    .pledge-action {
+        margin-top: 10px;
+        a {
+            padding-top: 10px;
+            padding-bottom: 10px;
+            background-color: #69b2aa;
+            color: #fff;
+            text-decoration: none;
+            text-align: center;
+            span {
+                display: block;
+                margin: 0px;
+                &:first-child {
+                    font-size: 16px;
+                    font-weight: bold;
+                }
+            }
+            &:first-child {
+                border-right: 1px solid #fff;
+            }
+        }
+    }
+}
+
+.pledge-details {
+    .md-title {
+        margin-top: 10px;
+        margin-bottom: 0px;
+        font-size: 12px;
+    }
+    .md-subhead {
+        font-size: 10px;
+        margin: 0px;
+        line-height: 5px;
+        margin-bottom: 10px;
+    }
+    .slider-pager {
+        bottom: 5px;
+        .slider-pager-page {
+            color: #e51547;
+        }
+    }
+    .slider-slide {
+        margin-bottom: 20px;
+    }
+    .designer-quotes {
+        background-color: #f1f1f1;
+        padding: 10px;
+        margin: 10px;
+        .md-avatar {
+            border-radius: 50%;
+        }
+    }
+    .pledge-result {
+        background-color: #f7e9e0;
+        padding: 10px 15px;
+        text-align: center;
+        .md-title {
+            font-size: 12px;
+            margin: 0px;
+            letter-spacing: 1px;
+            span {
+                font-size: 18px;
+            }
+        }
+    }
+    .pledge-stats {
+        margin-top: 20px;
+        .stats {
+            text-align: center;
+            p {
+                margin: 0px;
+                color: #8bbfa6;
+            }
+            .v {
+                font-size: 24px;
+                font-weight: bold;
+            }
+            .t {
+                font-size: 16px;
+                margin-top: 5px;
+            }
+        }
+    }
+    .pledge-notice {
+        padding: 20px;
+        p {
+            padding: 5px 40px;
+            border: 2px solid #acd9d4;
+            color: #1c1c1c;
+            span {
+                color: #29998d;
+                font-weight: bold;
+            }
+        }
+    }
+    .pledge-size-container {
+        padding: 20px;
+        .sizeBtn {
+            border: 2px solid #29998d;
+            margin-right: 5px;
+            button {
+                background-color: #29998d;
+                color: #fff;
+                text-align: center;
+                border: none;
+                padding: 0px 20px;
+                width: 60%;
+            }
+            input[type='text'] {
+                text-align: center;
+                width: 40%;
+            }
+        }
+        .sizeChartBtn {
+            border: 2px solid #29998d;
+            margin-left: 5px;
+            .custom-btn {
+                background-color: #29998d;
+                color: #fff;
+                text-align: center;
+                border:none;
+                height: 34px;
+                width: 100%;
+            }
+        }
+    }
+    //#29998d
+    .pledge-action {
+        padding: 0px;
+        a {
+            padding-top: 10px;
+            padding-bottom: 10px;
+            background-color: #69b2aa;
+            color: #fff;
+            text-decoration: none;
+            text-align: center;
+            span {
+                display: block;
+                margin: 0px;
+                &:first-child {
+                    font-size: 16px;
+                    font-weight: bold;
+                }
+            }
+            &:first-child {
+                border-right: 1px solid #fff;
+            }
+        }
+    }
+}
+
+.pledge-vote {
+    background-color: rgba(0, 0, 0, 0.90);
+    color: #fff;
+    .scroll {
+        height: 100%;
+        .my-content {
+            padding-top: 100px;
+            .sm {
+                font-size: 28px;
+                margin-bottom: 20px;
+            }
+            .lg {
+                font-size: 48px;
+                font-weight: bold;
+            }
+            .value {
+                color: #69b2aa;
+                font-weight: 300;
+                font-size: 128px;
+            }
+        }
+    }
+    .my-footer {
+        width: 100%;
+        background-color: #fff;
+        padding: 10px;
+        .range {
+            width: 100%;
+            margin-bottom: 10px;
+            border: none;
+        }
+        .action-bar {
+            padding: 0px;
+            width: 100%;
+            a {
+                padding-top: 10px;
+                padding-bottom: 10px;
+                background-color: #fff;
+                color: #ddd;
+                border: 2px solid #ddd;
+                text-decoration: none;
+                text-align: center;
+                margin-left: 10px;
+                margin-right: 10px;
+                font-size: 18px;
+                &.closeBtn {
+                    color: red;
+                }
+                &.yesBtn {
+                    color: #69b2aa;
+                }
+            }
+        }
+    }
+}

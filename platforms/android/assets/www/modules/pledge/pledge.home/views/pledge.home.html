@@ -1,0 +1,44 @@
+<ion-view view-title="PLEDGE & VOTE">
+    <!-- do you want padding? -->
+    <ion-content layout="column" class="pledge-list">
+        <md-whiteframe class="md-whiteframe-2dp" flex layout="column" ng-repeat="pledge in [1,2,3,4,5,6]">
+            <div class="pledge-img">
+                <img ng-src="{{ctrl.cdn}}/extras/d-{{pledge}}.jpg?width=600" class="img-responsive">
+            </div>
+            <div class="pledge-owner" layout-align="center center" layout="row">
+                <img ng-src="{{ctrl.cdn}}/extras/ds-{{pledge}}.jpg?w=100&h=100" class="md-avatar">
+            </div>
+            <div class="pledge-content" layout-align="center center" layout="column">
+                <p class="md-title">THE EXECUTIVE</p>
+                <p class="md-subhead">by Ladyzaza</p>
+            </div>
+            <div class="pledge-stats" layout="row">
+                <div class="stats" flex>
+                    <p class="v">8</p>
+                    <p class="t">DAYS LEFT</p>
+                </div>
+                <div class="stats" flex>
+                    <p class="v">{{15*pledge}}%</p>
+                    <p class="t">PLEDGED</p>
+                </div>
+                <div class="stats" flex>
+                    <p class="v">240</p>
+                    <p class="t">VOTES</p>
+                </div>
+            </div>
+            <div class="progress-bar-container">
+                <progress-bar progress="{{15*pledge}}"></progress-bar>
+            </div>
+            <div class="pledge-action" layout="row">
+                <a href="" flex ng-click="ctrl.showPledgeDetails(pledge)">
+                    <span>PLEDGE</span>
+                    <span>THIS DESIGN</span>
+                </a>
+                <a href="" flex ng-click="ctrl.showVoteModal(pledge)">
+                    <span>VOTE NOW</span>
+                    <span>Show your support!</span>
+                </a>
+            </div>
+        </md-whiteframe>
+    </ion-content>
+</ion-view>

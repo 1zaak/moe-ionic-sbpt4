@@ -1,0 +1,16 @@
+.tabs-custom {
+        .tabs {
+            background-color: #f7e9e0;
+            color: #333;
+            border-top: 2px solid #ddd !important;
+            padding-top: 0px;
+            .tab-item {
+                border-top: 2px solid transparent !important;
+                margin-top: -2px;
+                &.tab-item-active {
+                    color: #e61446;
+                    border-top: 2px solid #e61446 !important;
+                }
+            }
+        }
+    }

@@ -1,0 +1,66 @@
+.login-bg {
+    background-image: url('../assets/images/account/BG_login.png') !important;
+    background-size: cover;
+    background-position: center center;
+}
+
+.register-bg {
+    background-image: url('../assets/images/account/BG_register.png');
+    background-size: cover;
+    background-position: center center;
+}
+
+.welcome-bg {
+    background-image: url('../assets/images/new_year_background.png') !important;
+    background-repeat: repeat-y repeat-x;
+}
+
+.login-text {
+    text-align: center;
+    font-weight: bold;
+}
+
+.account-clearfix {
+    height: 100px;
+    width: 100%;
+    max-width: 100%;
+}
+
+.button-login {
+    background: $yellow-theme;
+    color: #fff;
+    border-radius: 25px;
+    min-height: 42px;
+}
+
+.account-form-wrapper {
+    width: 80%;
+    max-width: 80%;
+    .button-account {
+        background: $purple-theme;
+        color: #fff;
+        border-radius: 25px;
+        min-height: 42px;
+    }
+    .item-input {
+        padding: 6px 0 5px 0px;
+        background: transparent;
+        border: none;
+        border-bottom: 1px solid #444;
+        margin-bottom: 40px;
+        input::placeholder {
+            color: #444;
+        }
+        i {
+            color: #444;
+            margin-right: 10px;
+        }
+    }
+    .forgot-text {
+        color: $pink-theme;
+        text-align: center;
+    }
+    .signup-text {
+        text-align: center;
+    }
+}
