@@ -1,0 +1,64 @@
+<ion-modal-view class="semak-modal-bg">
+    <ion-header-bar class="bar bar-header bar-transparent">
+        <button class="button icon-left ion-chevron-left button-clear button-dark" ng-click="ctrl.closeRayuanBerjaya()">
+            &nbsp;Back
+        </button>
+        <h1 class="title">HASIL SEMAKAN</h1>
+    </ion-header-bar>
+    <ion-content>
+        <div flex-xs flex-gt-xs="50" layout="column">
+            <md-card ng-show="ctrl.calon.type == 'rayuan'">
+                <md-card-image><img ng-src="core/assets/images/tahniah.jpeg" alt="Tahniah"></md-card-image>
+                <md-card-title>
+                    <md-card-title-text>
+                        <span class="md-headline">TAHNIAH!</span>
+                    </md-card-title-text>
+                </md-card-title>
+                <md-card-content class="md-card-content">
+                    <p>Anda ditawarkan ke tingkatan satu (1) Sekolah Berasrama Penuh tahun 2016 Kementerian Pendidikan Malaysia
+
+                  
+                        <ul>
+                            <li>
+                                <b>Angka Giliran:</b> {{ctrl.calon.agiliran}}
+                            </li>
+                            <li>
+                                <b>Nama Calon:</b> {{ctrl.calon.NAMA}}
+                            </li>
+                            <li>
+                                <b>Sekolah Asal:</b> {{ctrl.calon.KODSEK}}
+                            </li>
+                            <li>
+                                
+                            </li>
+                            <li>
+                                <b>Nama SBP:</b> {{ctrl.sbp.NAMASBP}}
+                            </li>
+                            <li>
+                                <b>Alamat SBP:</b> {{ctrl.sbp.ALAMAT1}}
+                            </li>
+                             <li>
+                                <b>Poskod:</b> {{ctrl.sbp.POSKOD}}
+                            </li>
+                            <li>
+                                <b>Bandar:</b> {{ctrl.sbp.BANDAR}}
+                            </li>
+                            <li>
+                                <b>No Tel Sekolah:</b> {{ctrl.sbp.NOTEL}}
+                            </li>
+                        </ul>
+                    </p>
+                    <p style="color: red; font-weight: bold; text-align: center;">Tarikh Daftar: 15 FEBRUARY, 2016 (ISNIN)</p>
+                  
+                </md-card-content>
+               
+            </md-card>
+            
+           
+
+
+
+            
+        </div>
+    </ion-content>
+</ion-modal-view>

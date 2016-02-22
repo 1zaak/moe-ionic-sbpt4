@@ -1,8 +1,5 @@
 'use strict';
 angular.module('home', [
-    
-    'home.semakan',
-    'home.history',
-   
-
+  'home.semakan',
+  'home.history',
 ]);

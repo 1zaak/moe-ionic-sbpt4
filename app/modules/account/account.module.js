@@ -1,7 +1,3 @@
 'use strict';
-angular.module('account', [
-    
-    'account.welcome',
-   
-
+angular.module('account', ['account.welcome',
 ]);

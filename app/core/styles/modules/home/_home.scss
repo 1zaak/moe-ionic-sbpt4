@@ -30,27 +30,50 @@
     .forgot-text {
         color: $pink-theme;
         text-align: center;
-        
     }
     .signup-text {
         text-align: center;
-       
     }
+
 }
 
-// .outside-box{
-//     background: $gray-theme;
-// }
-.hasil-box {
-    display: flex;
-    padding: 1%;
-    width: 80%;
-    min-height: 30%;
-    border: 1px solid $purple-theme;
-    // background: $purple-theme;
+.perhatian {
+    text-align: justify;
+}
+//Inside Modal
+.semak-modal-bg {
+    background-image: url('../assets/images/symphony.png') !important;
+    background-repeat: repeat-y repeat-x;
 }
 
-.hasil-title {
-    font-weight: bold;
-    // background: $purple-theme;
+.md-card-content {
+    text-align: justify;
+    input {
+         padding: 6px 0 5px 0px;
+        background: transparent;
+        border: none;
+        border-bottom: 1px solid #444;
+        margin-bottom: 40px;
+        input::placeholder {
+            color: #444;
+        }
+        i {
+            color: #444;
+            margin-right: 10px;
+        }
+    }
+    
+    .card-input {
+        width:100%;
+        margin-bottom: auto;
+    }
+
+    .correct {
+        color: green;
+    }
+
+    .format {
+        color: $purple-theme;
+    }
+    
 }

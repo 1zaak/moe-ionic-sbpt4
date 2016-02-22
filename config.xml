@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
     <widget id="com.ruizon.com.my" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-        <name>Ecogiv Seller</name>
+        <name>MOE SBP</name>
         <description>
-            A sample Apache Cordova application that responds to the deviceready event.
+            A Ministry of Education application to query successful UPSR students' entry into Sekolah Berasrama Penuh.
         </description>
-        <author email="dev@cordova.apache.org" href="http://cordova.io">
-            Apache Cordova Team
+        <author email="izaak@izaak.my" href="mailto:izaak@izaak.my">
+            Izaak K.
         </author>
         <content src="index.html" />
         <plugin name="cordova-plugin-whitelist" spec="1" />
