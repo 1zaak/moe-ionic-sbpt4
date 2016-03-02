@@ -1,0 +1,16 @@
+<ion-view view-title="RESOURCES">
+    <ion-nav-bar class="bar-positive" align-title="center">
+        <ion-nav-back-button></ion-nav-back-button>
+    </ion-nav-bar>
+    <ion-content layout="column" overflow-scroll="true">
+        <!-- <ion-list><ion-item href="#">PDF 1</ion-item>
+       <ion-item href="#">PDF 2</ion-item></ion-list> -->
+        <p>
+            <button ng-click="ctrl.createInvoice()" class="button icon-left ion-play button-assertive">Create Invoice</button>
+        </p>
+        <div class="button-bar bar-balanced">
+            <a class="button" ng-click="ctrl.runReport()">Generate</a>
+            <a class="button button-assertive" ng-click="ctrl.clearReport()">Clear</a>
+        </div>
+    </ion-content>
+</ion-view>

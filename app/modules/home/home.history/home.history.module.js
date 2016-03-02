@@ -8,9 +8,6 @@ angular.module('home.history', [])
           'tab-history@home': {
             templateUrl: 'modules/home/home.history/views/home-history.html'
           }
-        },
-        data: {
-          isSecured: false
         }
       });
   });

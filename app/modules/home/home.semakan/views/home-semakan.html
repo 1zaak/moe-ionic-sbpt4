@@ -1,5 +1,5 @@
 <ion-view view-title="SEMAKAN">
-    <ion-nav-bar class="bar-positive">
+    <ion-nav-bar class="bar-positive" align-title="center">
         <ion-nav-back-button></ion-nav-back-button>
     </ion-nav-bar>
     <ion-content layout="column" overflow-scroll="true">
@@ -8,9 +8,9 @@
                 <h4 class="login-text">Sila Masukkan Angka Giliran UPSR 2015 dan Klik Butang Semakan</h4>
                 <div class="list">
                     <label class="item item-input">
-                        <input type="text" ng-keyup="ctrl.semak()" placeholder="Masuk angka giliran..." ng-model="ctrl.agiliran">
+                        <input type="text" placeholder="Masuk angka giliran..." ng-model="ctrl.agiliran"><!-- ng-keyup="ctrl.semak()" -->
                     </label>
-
+                    {{ctrl.noData}}
                     <button class="button button-full button-account" ng-click="ctrl.openModal()">
                         Semakan 
                     </button>

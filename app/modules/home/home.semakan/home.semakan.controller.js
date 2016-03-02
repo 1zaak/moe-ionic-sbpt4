@@ -1,28 +1,28 @@
 'use strict';
 angular.module('home.semakan')
-  .controller('homeSemakanCtrl', function ($scope, utilService, dataHelper) {
+  .controller('homeSemakanCtrl', function($scope, utilService, dataHelper) {
     var vm = this;
 
     utilService.getModal($scope, 'modules/home/home.semakan/views/semakan-modal.html', 'slide-in-up')
-      .then(function (modal) {
+      .then(function(modal) {
         vm.semakanModal = modal;
       });
 
     utilService.getModal($scope, 'modules/home/home.semakan/views/rayuan-berjaya-modal.html', 'slide-in-up')
-      .then(function (modal) {
+      .then(function(modal) {
         vm.rayuanBerjayaModal = modal;
       });
 
-    var refreshData = function () {
+    var refreshData = function() {
       vm.sbp = undefined;
       vm.calon = undefined;
       vm.agiliran = undefined;
     };
 
-    var getCalon = function (value) {
+    var getCalon = function(value) {
 
       dataHelper.getCalon(value)
-        .then(function (data) {
+        .then(function(data) {
 
 
           vm.calon = {
@@ -73,7 +73,7 @@ angular.module('home.semakan')
             type: data.type
           };
 
-        }, function (data) {
+        }, function(data) {
           vm.calon = {
             status: data.status,
           };
@@ -81,12 +81,12 @@ angular.module('home.semakan')
 
     };
 
-    vm.hapus = function () {
+    vm.hapus = function() {
       vm.agiliran = undefined;
     };
 
 
-    vm.semak = function () {
+    var semak = function() {
 
       vm.agiliran = vm.agiliran.toUpperCase().trim();
 
@@ -94,59 +94,63 @@ angular.module('home.semakan')
 
     };
 
-    vm.openModal = function () {
+    vm.openModal = function() {
+      semak();
       if (vm.calon !== undefined) {
         vm.semakanModal.show();
+        vm.noData = undefined;
       } else {
+
+        vm.noData = "Please try again";
         vm.semakanModal.hide();
       }
     };
 
 
-    vm.correctIC = function () {
-      var kpBapa = vm.calon.NOKP_BAPA;
-      var kpIbu = vm.calon.NOKP_IBU;
-      var inputKP = vm.calon.kpPenjaga;
+    // var correctIC = function () {
+    //   var kpBapa = vm.calon.NOKP_BAPA;
+    //   var kpIbu = vm.calon.NOKP_IBU;
+    //   var inputKP = vm.calon.kpPenjaga;
 
-      if (kpBapa === inputKP) {
-        return true;
-      } else if (kpIbu === inputKP) {
-        return true;
-      } else {
-        return false;
-      }
-    };
+    //   if (kpBapa === inputKP) {
+    //     return true;
+    //   } else if (kpIbu === inputKP) {
+    //     return true;
+    //   } else {
+    //     return false;
+    //   }
+    // };
 
-    vm.formatIC = function () {
-      var kpBapa = vm.calon.NOKP_BAPA;
-      var kpIbu = vm.calon.NOKP_IBU;
-      var inputKP = vm.calon.kpPenjaga;
+    // var formatIC = function () {
+    //   var kpBapa = vm.calon.NOKP_BAPA;
+    //   var kpIbu = vm.calon.NOKP_IBU;
+    //   var inputKP = vm.calon.kpPenjaga;
 
-      if (kpBapa === inputKP) {
-        return false;
-      } else if (kpIbu === inputKP) {
-        return false;
-      } else {
-        return true;
-      }
-    };
+    //   if (kpBapa === inputKP) {
+    //     return false;
+    //   } else if (kpIbu === inputKP) {
+    //     return false;
+    //   } else {
+    //     return true;
+    //   }
+    // };
 
 
-    vm.closeSemak = function () {
+    vm.closeSemak = function() {
 
       vm.semakanModal.hide();
       refreshData();
     };
 
-    vm.closeRayuanBerjaya = function () {
+    vm.closeRayuanBerjaya = function() {
       vm.semakanModal.hide();
       vm.rayuanBerjayaModal.hide();
       refreshData();
     };
 
-    var getSbp = function (value) {
+    var getSbp = function(value) {
       dataHelper.getSbp(value)
-        .then(function (data) {
+        .then(function(data) {
 
 
           vm.sbp = {
@@ -167,19 +171,19 @@ angular.module('home.semakan')
             KAPASITI_P: data.KAPASITI_P,
             IDSEKOLAH: data.IDSEKOLAH
           };
-        }, function (data) {
+        }, function(data) {
           vm.sbp = {
             status: data.status,
           };
         });
     };
 
-    vm.getSbp = function () {
+    vm.getSbp = function() {
       var query = vm.calon.agiliran + '/' + vm.calon.kpPenjaga;
       getSbp(query);
     };
 
-    vm.hantar = function () {
+    vm.hantar = function() {
 
       var kpBapa = vm.calon.NOKP_BAPA;
       var kpIbu = vm.calon.NOKP_IBU;
@@ -196,12 +200,12 @@ angular.module('home.semakan')
       vm.agiliran = undefined;
     };
 
-    vm.kembali = function () {
+    vm.kembali = function() {
 
       vm.semakanModal.hide();
       vm.agiliran = undefined;
     };
-    $scope.$on('$destroy', function () {
+    $scope.$on('$destroy', function() {
       vm.semakanModal.remove();
     });
   });
