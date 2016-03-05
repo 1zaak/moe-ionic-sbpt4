@@ -2,7 +2,7 @@
 // Async Report Service
 //
 // This service provides the ability to save to file a report using a set of methods run
-// async to allow progress reporting.  The async processing is acheived by using promises 
+// async to allow progress reporting.  The async processing is acheived by using promises
 // and the $q service from angular.  This async work will allow for a repsonsive UI during
 // processing, which can be slow on older phones
 //
@@ -85,7 +85,7 @@
       // currently mocking this and returning a pre-built JSON doc definition
 
       //use rpt service to generate the JSON data model for processing PDF
-      // had to use the $timeout to put a short delay that was needed to 
+      // had to use the $timeout to put a short delay that was needed to
       // properly generate the doc declaration
       $timeout(function() {
         var dd = {};

@@ -1,6 +1,6 @@
 'use strict';
 angular.module('home.semakan')
-  .controller('homeSemakanCtrl', function($scope, utilService, dataHelper) {
+  .controller('homeSemakanCtrl', function($scope, utilService, dataHelper, $mdDialog, $mdMedia) {
     var vm = this;
 
     utilService.getModal($scope, 'modules/home/home.semakan/views/semakan-modal.html', 'slide-in-up')
@@ -12,99 +12,157 @@ angular.module('home.semakan')
       .then(function(modal) {
         vm.rayuanBerjayaModal = modal;
       });
+    vm.setuju = true;
 
     var refreshData = function() {
+      vm.agiliran = undefined;
+      vm.mykad = undefined;
+      vm.isLoading = false;
       vm.sbp = undefined;
       vm.calon = undefined;
-      vm.agiliran = undefined;
+      vm.statusSemakan = 'Semak';
     };
 
-    var getCalon = function(value) {
+    refreshData();
 
-      dataHelper.getCalon(value)
+    vm.hapus = function() {
+      refreshData();
+    };
+
+    vm.uppercase = function() {
+      vm.agiliran = vm.agiliran.toUpperCase().trim();
+    };
+
+    var getSst4 = function(value) {
+      vm.statusSemakan = undefined;
+      vm.isLoading = true;
+      dataHelper.getSst4(value)
         .then(function(data) {
-
-
-          vm.calon = {
-            status: data.status,
-            agiliran: data.AGILIRAN,
-            sekolah: data.sekolah,
-            IC: data.IC,
-            NAMAC: data.NAMAC,
-            TLAHIR3: data.TLAHIR3,
-            JANTINA: data.JANTINA,
-            JENISSBP: data.JENISSBP,
-            KKET: data.KKET,
-            KAGAMA: data.KAGAMA,
-            KCACAT: data.KCACAT,
-            KPEKER: data.KPEKER,
-            KPEND: data.KPEND,
-            KODSEK: data.KODSEK,
-            GJAWI: data.GJAWI,
-            GQUR: data.GQUR,
-            KODBIL: data.KODBIL,
-            KODNEG: data.KODNEG,
-            STATPEL: data.STATPEL,
-            NOPUSAT: data.NOPUSAT,
-            JUM1: data.JUM1,
-            GRED4: data.GRED4,
-            LAYAK: data.LAYAK,
-            STATUS: data.STATUS,
-            TAWARAN: data.TAWARAN,
-            TEMPAT: data.TEMPAT,
-            KODSIRI: data.KODSIRI,
-            NAMA: data.NAMA,
-            TRKTAWAR: data.TRKTAWAR,
-            NOKP_BAPA: data.NOKP_BAPA,
-            NOKP_IBU: data.NOKP_IBU,
-            ALAMAT1: data.ALAMAT1,
-            ALAMAT2: data.ALAMAT2,
-            ALAMAT3: data.ALAMAT3,
-            POSKOD: data.POSKOD,
-            NEG_ALAMAT: data.NEG_ALAMAT,
-            BANDAR: data.BANDAR,
-            NO_TAWARAN: data.NO_TAWARAN,
-            NO_KPT: data.NO_KPT,
-            PENGESAHAN_TAWARAN: data.PENGESAHAN_TAWARAN,
-            MARA: data.MARA,
-            SETUJU_TERIMA: data.SETUJU_TERIMA,
-            TKH_SETUJU_TERIMA: data.TKH_SETUJU_TERIMA,
-            CETAK: data.CETAK,
-            type: data.type
-          };
-
+          vm.peribadi = data;
+          vm.isLoading = false;
+          vm.statusSemakan = 'Calon berjaya';
+          vm.semakanModal.show();
         }, function(data) {
-          vm.calon = {
-            status: data.status,
-          };
+          vm.peribadi = data;
+          vm.isLoading = false;
+          vm.statusSemakan = 'Server tiada respons';
+          if (data !== undefined && data !== null) {
+            vm.semakanModal.show();
+          } else if (data !== undefined && data === null) {
+            vm.statusSemakan = 'Server tiada respons';
+          }
+
+        });
+    };
+
+    vm.semak = function() {
+      if (vm.agiliran !== undefined && vm.mykad !== undefined) {
+        var query = vm.agiliran + '/' + vm.mykad;
+        getSst4(query);
+      } else {
+        vm.statusSemakan = 'Sila masukkan data..';
+      }
+    };
+
+    var postTawaran = function(url, value) {
+      value = JSON.stringify(value);
+      console.log(url, value);
+      dataHelper.postTawaran(url, value)
+        .then(function(data) {
+          return data;
+          console.log(data);
+        }, function(data) {
+          return data;
+          console.log(data);
         });
 
     };
 
-    vm.hapus = function() {
-      vm.agiliran = undefined;
-    };
-
-
-    var semak = function() {
-
-      vm.agiliran = vm.agiliran.toUpperCase().trim();
-
-      getCalon(vm.agiliran);
-
-    };
-
-    vm.openModal = function() {
-      semak();
-      if (vm.calon !== undefined) {
-        vm.semakanModal.show();
-        vm.noData = undefined;
-      } else {
-
-        vm.noData = "Please try again";
+    vm.hantar = function() {      
+        var url = vm.peribadi.agiliran;
+        var data = {
+          SETUJU_TERIMA: vm.setuju,
+          TKH_SETUJU_TERIMA: Date()
+        };
+        console.log(data);
+        postTawaran(url, data);
+        utilService.go('home.resources');
         vm.semakanModal.hide();
-      }
+
     };
+
+    // var getCalon = function(value) {
+
+    //   dataHelper.getCalon(value)
+    //     .then(function(data) {
+
+
+    //       vm.calon = {
+    //         status: data.status,
+    //         agiliran: data.AGILIRAN,
+    //         sekolah: data.sekolah,
+    //         IC: data.IC,
+    //         NAMAC: data.NAMAC,
+    //         TLAHIR3: data.TLAHIR3,
+    //         JANTINA: data.JANTINA,
+    //         JENISSBP: data.JENISSBP,
+    //         KKET: data.KKET,
+    //         KAGAMA: data.KAGAMA,
+    //         KCACAT: data.KCACAT,
+    //         KPEKER: data.KPEKER,
+    //         KPEND: data.KPEND,
+    //         KODSEK: data.KODSEK,
+    //         GJAWI: data.GJAWI,
+    //         GQUR: data.GQUR,
+    //         KODBIL: data.KODBIL,
+    //         KODNEG: data.KODNEG,
+    //         STATPEL: data.STATPEL,
+    //         NOPUSAT: data.NOPUSAT,
+    //         JUM1: data.JUM1,
+    //         GRED4: data.GRED4,
+    //         LAYAK: data.LAYAK,
+    //         STATUS: data.STATUS,
+    //         TAWARAN: data.TAWARAN,
+    //         TEMPAT: data.TEMPAT,
+    //         KODSIRI: data.KODSIRI,
+    //         NAMA: data.NAMA,
+    //         TRKTAWAR: data.TRKTAWAR,
+    //         NOKP_BAPA: data.NOKP_BAPA,
+    //         NOKP_IBU: data.NOKP_IBU,
+    //         ALAMAT1: data.ALAMAT1,
+    //         ALAMAT2: data.ALAMAT2,
+    //         ALAMAT3: data.ALAMAT3,
+    //         POSKOD: data.POSKOD,
+    //         NEG_ALAMAT: data.NEG_ALAMAT,
+    //         BANDAR: data.BANDAR,
+    //         NO_TAWARAN: data.NO_TAWARAN,
+    //         NO_KPT: data.NO_KPT,
+    //         PENGESAHAN_TAWARAN: data.PENGESAHAN_TAWARAN,
+    //         MARA: data.MARA,
+    //         SETUJU_TERIMA: data.SETUJU_TERIMA,
+    //         TKH_SETUJU_TERIMA: data.TKH_SETUJU_TERIMA,
+    //         CETAK: data.CETAK,
+    //         type: data.type
+    //       };
+
+    //     }, function(data) {
+    //       vm.calon = {
+    //         status: data.status,
+    //       };
+    //     });
+
+    // };
+    // vm.openModal = function () {
+    //   semak();
+    //   if (vm.calon !== undefined) {
+    //     vm.semakanModal.show();
+
+    //   } else {
+
+
+    //     vm.semakanModal.hide();
+    //   }
+    // };
 
 
     // var correctIC = function () {
@@ -148,62 +206,10 @@ angular.module('home.semakan')
       refreshData();
     };
 
-    var getSbp = function(value) {
-      dataHelper.getSbp(value)
-        .then(function(data) {
-
-
-          vm.sbp = {
-            status: data.status,
-            KODSBP: data.KODSBP,
-            KODRINGKAS: data.KODRINGKAS,
-            NAMASBP: data.NAMASBP,
-            ALAMAT1: data.ALAMAT1,
-            ALAMAT2: data.ALAMAT2,
-            BANDAR: data.BANDAR,
-            POSKOD: data.POSKOD,
-            NEGERI: data.NEGERI,
-            NOTEL: data.NOTEL,
-            KODSEKOLAH: data.KODSEKOLAH,
-            PASSWORD: data.PASSWORD,
-            KAPASITI: data.KAPASITI,
-            KAPASITI_L: data.KAPASITI_L,
-            KAPASITI_P: data.KAPASITI_P,
-            IDSEKOLAH: data.IDSEKOLAH
-          };
-        }, function(data) {
-          vm.sbp = {
-            status: data.status,
-          };
-        });
-    };
-
-    vm.getSbp = function() {
-      var query = vm.calon.agiliran + '/' + vm.calon.kpPenjaga;
-      getSbp(query);
-    };
-
-    vm.hantar = function() {
-
-      var kpBapa = vm.calon.NOKP_BAPA;
-      var kpIbu = vm.calon.NOKP_IBU;
-      var inputKP = vm.calon.kpPenjaga;
-
-      if (kpBapa === inputKP) {
-        vm.rayuanBerjayaModal.show();
-      } else if (kpIbu === inputKP) {
-        vm.rayuanBerjayaModal.show();
-      } else {
-        vm.calon.kpPenjaga = '';
-      }
-
-      vm.agiliran = undefined;
-    };
-
     vm.kembali = function() {
 
       vm.semakanModal.hide();
-      vm.agiliran = undefined;
+      refreshData();
     };
     $scope.$on('$destroy', function() {
       vm.semakanModal.remove();

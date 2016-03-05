@@ -2,33 +2,42 @@
     <ion-nav-bar class="bar-positive" align-title="center">
         <ion-nav-back-button></ion-nav-back-button>
     </ion-nav-bar>
-    <ion-content layout="column" overflow-scroll="true">
+    <ion-content data-tap-disabled="true" layout="column" overflow-scroll="true">
         <div layout="column" layout-align="top center">
             <section class="account-form-wrapper">
-                <h4 class="login-text">Sila Masukkan Angka Giliran UPSR 2015 dan Klik Butang Semakan</h4>
-                <div class="list">
+                <h4 class="login-text">Sila Masukkan NO. MYKAD dan ANGKA GILIRAN PT3 2015 dan Klik Butang Semakan</h4>
+                <div class="list list-inset">
                     <label class="item item-input">
-                        <input type="text" placeholder="Masuk angka giliran..." ng-model="ctrl.agiliran"><!-- ng-keyup="ctrl.semak()" -->
+                        <i class="icon zmdi zmdi-account zmdi-hc-lg placeholder-icon"></i>
+                        <input type="text" placeholder="Masuk No. MyKad..." ng-model="ctrl.mykad">
                     </label>
-                    {{ctrl.noData}}
-                    <button class="button button-full button-account" ng-click="ctrl.openModal()">
-                        Semakan 
+                    <label class="item item-input bottom-input">
+                        <i class="icon zmdi zmdi-graduation-cap zmdi-hc-lg placeholder-icon "></i>
+                        <input type="text" placeholder="Masuk Angka Giliran..." ng-keyup="ctrl.uppercase()" ng-model="ctrl.agiliran">
+                    </label>
+                     
+                    
+                    
+                    
+                     <button class="button button-full button-account" layout="row" ng-click="ctrl.semak()">
+                        {{ctrl.statusSemakan}} <div class="loader-holder"><ion-spinner ng-if="ctrl.isLoading" icon="lines" class="lines"></ion-spinner></div>
                     </button>
-                    <button class="button button-full button-batal" ng-click="ctrl.hapus()">
+                     <!-- <button class="button button-full button-account" ng-click="ctrl.openModal()">
+                        Semakan
+                    </button> -->
+                    <button data-tap-disabled="true" class="button button-full button-batal" ng-click="ctrl.hapus()">
                         Batal
                     </button>
-                    
                 </div>
+                
+                
             </section>
         </div>
-
-        
-        <md-card layout-align="bottom center">
-            
-            
+        <md-card layout-align="bottom center" class="bottom-text">
             <md-card-content class="perhatian">
-                <p>Pastikan maklumat ANGKA GILIRAN calon sama seperti yang tercatat dalam slip pendaftaran UPSR calon Sekiranya terdapat sebarang masalah, sila hubungi 03-83217400 untuk keterangan lanjut
-                </p>
+                <!-- <p>Pastikan maklumat No. MyKad dan ANGKA GILIRAN calon sama seperti yang tercatat dalam slip pendaftaran PT3 calon. Sekiranya terdapat sebarang masalah, sila hubungi 03-83217400 untuk keterangan lanjut
+                </p> -->
+                <p>Sila semak dengan teliti maklumat yang dipaparkan. Sekiranya anda berjaya dan bersetuju dengan tawaran ini, surat dan lampiran tawaran <span style="color:red;">MESTI DICETAK SEGERA</span>  dan dibawa semasa hari pendaftaran.</p>
             </md-card-content>
         </md-card>
     </ion-content>

@@ -7,101 +7,93 @@
     </ion-header-bar>
     <ion-content>
         <div flex-xs flex-gt-xs="50" layout="column">
-            <md-card ng-show="ctrl.calon.type == 'rayuan'">
-                <md-card-image><img ng-src="core/assets/images/tahniah.jpeg" alt="Tahniah"></md-card-image>
+        <md-card ng-show="ctrl.peribadi.status === 'not found'">
                 <md-card-title>
                     <md-card-title-text>
-                        <span class="md-headline">TAHNIAH!</span>
+                        <span class="md-headline">HARAP MAAF</span>
                     </md-card-title-text>
                 </md-card-title>
                 <md-card-content class="md-card-content">
-                    <p>Anda ditawarkan ke tingkatan satu (1) Sekolah Berasrama Penuh tahun 2016 Kementerian Pendidikan Malaysia
-                        <ul>
-                            <li>
-                                <b>Angka Giliran:</b> {{ctrl.calon.agiliran}}
-                            </li>
-                            <li>
-                                <b>Nama Calon:</b> {{ctrl.calon.NAMA}}
-                            </li>
-                            <li>
-                                <b>Sekolah Asal:</b> {{ctrl.calon.KODSEK}}
-                            </li>
-                        </ul>
-                    </p>
-                    <p>Untuk Maklumat Penempatan Sila Masukkan No. MyKad Murid / Bapa / Ibu / Penjaga :</p>
-                  <input class="card-input" ng-keyup="ctrl.getSbp()" type="text" ng-model="ctrl.calon.kpPenjaga" placeholder="No. MyKad Murid / Bapa / Ibu / Penjaga">
-                  <p class="correct" ng-show="ctrl.correctIC()">Sila tekan hantar</p>
-                   <p class="format" ng-show="ctrl.formatIC()">Format MyKad: 660510145059</p>
-                </md-card-content>
-
-                <md-card-actions class="actions" layout="row" layout-align="end center">
-                
-                 
-                    <md-button ng-click="ctrl.hantar()">Hantar</md-button>
-                </md-card-actions>
-            </md-card>
-            
-            <!-- Kalau berjaya 1st batch -->
-            <md-card ng-show="ctrl.calon.type == 'pertama'">
-                <md-card-image><img ng-src="core/assets/images/tahniah.jpeg" alt="Tahniah"></md-card-image>
-                <md-card-title>
-                    <md-card-title-text>
-                        <span class="md-headline">TAHNIAH!</span>
-                    </md-card-title-text>
-                </md-card-title>
-                <md-card-content class="md-card-content">
-                    <p>Anda telah berjaya mendapat tawaran ke Sekolah Berasrama Penuh 2016 Ambilan Pertama. 
-Terima Kasih.
+                    <p>DIMAKLUMKAN ANDA TIDAK DITAWARKAN KE TINGKATAN 4 SEKOLAH BERASRAMA PENUH 2016. 
                     </p>
                     <ul>
-                            <li>
-                                <b>Angka Giliran:</b> {{ctrl.calon.agiliran}}
-                            </li>
-                            <li>
-                                <b>Nama Calon:</b> {{ctrl.calon.NAMAC}}
-                            </li>
-                            <li>
-                                <b>Sekolah Asal:</b> {{ctrl.calon.KODSEK}}
-                            </li>
-                        </ul>
-                    
-                <md-card-actions class="actions" layout="row" layout-align="end center">
-                
-                 
-                    <md-button ng-click="ctrl.kembali()">Kembali</md-button>
-                </md-card-actions>
+                        <li>
+                            <b>ANGKA GILIRAN:</b> {{ctrl.agiliran}}
+                        </li>
+                        <li>
+                            <b>NO. MYKAD:</b> {{ctrl.mykad}}
+                        </li>
+                    </ul>
+                    <md-card-actions class="actions" layout="row" layout-align="end center">
+                        <md-button class="md-raised md-primary" ng-click="ctrl.kembali()">Kembali</md-button>
+                    </md-card-actions>
             </md-card>
-
-
-            <!-- Kalau gagal -->
-            <md-card ng-show="ctrl.calon.status == 'not found'">
-                
+            <md-card ng-show="ctrl.peribadi.status === 'success'">
+                <md-card-image><img ng-src="core/assets/images/tahniah.jpeg" alt="Tahniah"></md-card-image>
                 <md-card-title>
                     <md-card-title-text>
-                        <span class="md-headline">MAKLUMAN</span>
+                        <span class="md-headline">TAHNIAH!</span>
                     </md-card-title-text>
                 </md-card-title>
                 <md-card-content class="md-card-content">
-                    <p>Dimaklumkan anda tidak berjaya ditawarkan
-ke Tingkatan 1 Sekolah Berasrama Penuh Tahun 2016. 
-Terima Kasih.
-                    </p>
-                     <ul>
+                    <p class="top-content">ANDA DITAWARKAN KE TINGKATAN EMPAT (4) DI SEKOLAH BERASRAMA PENUH SEPERTI DI BAWAH BAGI SESI PERSEKOLAHAN TAHUN 2016
+                        <ul>
                             <li>
-                                <b>Angka Giliran:</b> {{ctrl.agiliran}}
+                                <b>ANGKA GILIRAN:</b> {{ctrl.peribadi.agiliran}}
                             </li>
-                            
+                            <li>
+                                <b>NO MYKAD:</b> {{ctrl.peribadi.nokp}}
+                            </li>
+                            <li>
+                                <b>NAMA:</b> {{ctrl.peribadi.nama}}
+                            </li>
+                            <li>
+                                <b>SEKOLAH ASAL:</b> {{ctrl.peribadi.nama}}
+                            </li>
+                            <li></li>
+                            <li>
+                                <b>SEKOLAH ASAL:</b> {{ctrl.peribadi.nama_sek}}
+                            </li>
+                            <li>
+                                <b>NAMA SBP DITAWARKAN:</b> {{ctrl.peribadi.nama_sbp}}
+                            </li>
+                            <li>
+                                <b>ALIRAN:</b> {{ctrl.peribadi.ket_aliran}}
+                            </li>
+                            <li>
+                                <b>ALAMAT:</b>
+                            </li>
+                            <li>
+                                <b>POSKOD:</b>
+                            </li>
+                            <li>
+                                <b>BANDAR, NEGERI:</b> {{ctrl.peribadi.nama}}
+                            </li>
+                            <li>
+                                <b>NO. TELEFON:</b> {{ctrl.peribadi.kodtel + '-' + ctrl.peribadi.notel}}
+                            </li>
                         </ul>
-                    
+                    </p>
+                    <p><b>ADAKAH ANDA BERSETUJU DENGAN PENAWARAN INI?</b></p>
+                    <ul class="list">
+                        <li class="item item-toggle">
+                            <span ng-if="ctrl.setuju === true" style="color: green;"><b>SETUJU</b></span>
+                            <span ng-if="ctrl.setuju === false" style="color: red;"><b>TIDAK SETUJU</b></span>
+                            <label class="toggle">
+                                <input type="checkbox" ng-model="ctrl.setuju">
+                                <div class="track">
+                                    <div class="handle"></div>
+                                </div>
+                            </label>
+                        </li>
+                </md-card-content>
                 <md-card-actions class="actions" layout="row" layout-align="end center">
-                
-                 
-                    <md-button ng-click="ctrl.kembali()">Kembali</md-button>
+                    
+                    <md-button ng-if="ctrl.setuju === true" class="md-raised md-primary" ng-click="ctrl.hantar()">Hantar</md-button>
+                    <md-button ng-if="ctrl.setuju === false" class="md-raised md-warn" ng-click="ctrl.hantar()">Adakah anda pasti? {{ctrl.pasti}}</md-button>
                 </md-card-actions>
             </md-card>
-
-
-
+           
             
         </div>
     </ion-content>

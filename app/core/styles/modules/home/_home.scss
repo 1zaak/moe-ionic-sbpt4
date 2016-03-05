@@ -1,6 +1,9 @@
 .account-form-wrapper {
     width: 80%;
     max-width: 80%;
+    .loading {
+        margin-top: 30px;
+    }
     .button-account {
         background: $purple-theme;
         color: #fff;
@@ -27,6 +30,9 @@
             margin-right: 10px;
         }
     }
+    .bottom-input {
+        background: black;
+    }
     .forgot-text {
         color: $pink-theme;
         text-align: center;
@@ -34,12 +40,12 @@
     .signup-text {
         text-align: center;
     }
-
 }
 
 .perhatian {
     text-align: justify;
 }
+
 //Inside Modal
 .semak-modal-bg {
     background-image: url('../assets/images/symphony.png') !important;
@@ -48,8 +54,16 @@
 
 .md-card-content {
     text-align: justify;
+    // .toggle input + .track {
+    //     background-color: #ef473a;
+    // }
+
+    // .toggle input {
+    //     background-color: green;
+    // }
+
     input {
-         padding: 6px 0 5px 0px;
+        padding: 6px 0 5px 0px;
         background: transparent;
         border: none;
         border-bottom: 1px solid #444;
@@ -62,18 +76,14 @@
             margin-right: 10px;
         }
     }
-    
     .card-input {
-        width:100%;
+        width: 100%;
         margin-bottom: auto;
     }
-
     .correct {
         color: green;
     }
-
     .format {
         color: $purple-theme;
     }
-    
 }

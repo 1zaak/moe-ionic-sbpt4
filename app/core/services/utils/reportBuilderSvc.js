@@ -1,7 +1,7 @@
 //
 // Report Service
 //
-// This service provides a dummy document definition for the purpose of this sample.  In 
+// This service provides a dummy document definition for the purpose of this sample.  In
 // my real world usage, I split documentDef creation from the reportPDF creation.  The RptBuilderSvc
 // is used to receive inputs and return a JSON object w/ the report declarations.  This mock svc
 // just creates some random progress matrix and draws a table to display.  The pdfMake.org site

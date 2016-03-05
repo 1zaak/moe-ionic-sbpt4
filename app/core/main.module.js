@@ -9,10 +9,8 @@ angular.module('app.core', [
   'ksSwiper',
   'ionic-modal-select',
   'pdf'
-  
-// TODO: load other modules selected during generation
 ])
-  .config(function($stateProvider, $urlRouterProvider) {
+  .config(function ($stateProvider, $urlRouterProvider) {
 
     // ROUTING with ui.router
     $urlRouterProvider.otherwise('/welcome');

@@ -24,17 +24,30 @@
 .account-form-wrapper {
     width: 80%;
     max-width: 80%;
+    .bottom-input {
+        margin-top: -30px;
+    }
+    .loader-holder {
+        padding-top: 5px;
+    }
+    .lines svg {
+    
+        
+        stroke: #fff;
+        
+    }
     .button-account {
+        margin-top: -10px;
         background: $purple-theme;
         color: #fff;
         border-radius: 25px;
-        min-height: 42px;
+        max-height: 42px;
     }
     .item-input {
         padding: 6px 0 5px 0px;
         background: transparent;
         border: none;
-        border-bottom: 1px solid #444;
+        border-bottom: 1px solid black;
         margin-bottom: 40px;
         input::placeholder {
             color: #444;
@@ -51,4 +64,8 @@
     .signup-text {
         text-align: center;
     }
+}
+
+.bottom-text {
+    margin-top: -5px;
 }

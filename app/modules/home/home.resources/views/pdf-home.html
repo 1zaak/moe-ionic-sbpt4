@@ -1,7 +1,8 @@
 <ion-modal-view>
-    <ion-header-bar>
-        <h1 class="title">Invoice</h1> 
+    <ion-header-bar align-title="center">
+        <h1 class="title" >Invoice</h1>        
         <button ng-click="ctrl.modal.hide()" class="button button-icon icon ion-android-close"></button>
+         <button ng-click="ctrl.modal.save()" class="button button-icon icon ion-android-archive"></button>
     </ion-header-bar>
     <ion-content>
         <ng-pdf ng-if="pdfUrl" template-url="modules/home/home.resources/views/pdf-viewer.html" canvasid="pdf" scale="page-fit"></ng-pdf>  
