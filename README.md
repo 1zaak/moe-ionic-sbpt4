@@ -9,6 +9,20 @@ This project was developed using Ionic with a [Meteor backend](https://github.co
 
 You only need to run `gulp watch` from the root folder. It is using [M-Ionic v1.5.0](https://github.com/mwaylabs/generator-m-ionic/releases/tag/1.5.0) as the Yeoman Generator.
 
+## App Walkthrough
+
+<p align="center">
+ 
+    <img src="http://1zaak.github.io/moe-app-1.webp">
+  <img src="http://1zaak.github.io/moe-app-2.webp">
+  <img src="http://1zaak.github.io/moe-app-3.webp">
+  <img src="http://1zaak.github.io/moe-app-4.webp">
+  
+    
+  
+  
+</p>
+
 ## Official Documentation
 
 The detailed documentation can be found [here](https://docs.google.com/document/d/1LCQQUMiQV-8vSwk_JBIYTSkVQnZGb73Dte6XSJo3dgI/edit?usp=sharing).
