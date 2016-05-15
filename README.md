@@ -9,7 +9,7 @@ This project was developed using Ionic with a [Meteor backend](https://github.co
 
 You only need to run `gulp watch` from the root folder. It is using [M-Ionic v1.5.0](https://github.com/mwaylabs/generator-m-ionic/releases/tag/1.5.0) as the Yeoman Generator.
 
-## App Walkthrough
+### App Walkthrough
 
 <p align="center">
  
