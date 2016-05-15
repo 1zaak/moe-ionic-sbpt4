@@ -12,5 +12,9 @@ You only need to run `gulp watch` from the root folder.
 
 The detailed documentation can be found [here](https://docs.google.com/document/d/1LCQQUMiQV-8vSwk_JBIYTSkVQnZGb73Dte6XSJo3dgI/edit?usp=sharing).
 
+## In Google Play 
+
+The [App](https://play.google.com/store/apps/details?id=com.moe.my&hl=en) in Google Play
+
 ## License
 Code licensed under MIT. Docs under Apache 2. PhoneGap is a trademark of Adobe.
