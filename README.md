@@ -1,8 +1,8 @@
 # Official Malaysian Ministry of Education App
-This project was developed using Ionic with a Meteor backend. The sole feature of this app is to verify any student's application to the nation's boarding school. It is also at the same time an unofficial lesson for the government in proper Hybrid Mobile Application technologies.
+This project was developed using Ionic with a Meteor backend. The sole feature of this app is to verify any student's application to the nation's boarding school. It is also at the same time a useful unofficial lesson in proper Hybrid Mobile Application technologies for the government .
 
 ## Architecture
-<img src="MOE%20SBPT4%20Architecture.svg" alt="">
+<img src="http://1zaak.github.io/MOE%20SBPT4%20Architecture.svg" alt="">
 
 ## Running the app
 
