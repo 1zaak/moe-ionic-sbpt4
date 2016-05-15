@@ -10,10 +10,10 @@
   ],
   "description": "Advanced HTML5 hybrid mobile app development framework.",
   "main": [
-    "release/css/ionic.css",
-    "release/fonts/*",
-    "release/js/ionic.js",
-    "release/js/ionic-angular.js"
+    "css/ionic.css",
+    "fonts/*",
+    "js/ionic.js",
+    "js/ionic-angular.js"
   ],
   "keywords": [
     "mobile",
@@ -28,25 +28,6 @@
   ],
   "license": "MIT",
   "private": false,
-  "ignore": [
-    "**/.*",
-    "CONTRIBUTING.md",
-    "Gruntfile.js",
-    "component.json",
-    "config",
-    "examples",
-    "package.json",
-    "release/js/angular",
-    "release/js/angular-ui",
-    "scripts",
-    "test",
-    "js/controllers",
-    "js/ext",
-    "js/utils",
-    "js/views",
-    "js/_license.js",
-    "js/ionic.js"
-  ],
   "dependencies": {
     "angular": "1.4.3",
     "angular-animate": "1.4.3",
@@ -57,9 +38,9 @@
   "_resolution": {
     "type": "version",
     "tag": "v1.2.4",
-    "commit": "f30ee10e4120f38eab2220f244967bfe14a7818a"
+    "commit": "0fd8eaea558ad6b44ad74ae09282646a306634e4"
   },
-  "_source": "git://github.com/driftyco/ionic.git",
-  "_target": "~1.2.0",
-  "_originalSource": "ionic"
+  "_source": "git://github.com/driftyco/ionic-bower.git",
+  "_target": "1.2.4",
+  "_originalSource": "driftyco/ionic-bower"
 }

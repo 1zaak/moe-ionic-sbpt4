@@ -8,11 +8,13 @@
     <!-- custom meta tags -->
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <title>ionic-template</title>
+   
+    <title>MOE-SBP</title>
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
     <!-- build:css styles/vendor.css -->
     <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/ionic/css/ionic.css" />
     <link rel="stylesheet" href="bower_components/angular-material/angular-material.css" />
     <link rel="stylesheet" href="bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.min.css" />
     <link rel="stylesheet" href="bower_components/swiper/dist/css/swiper.css" />
@@ -30,17 +32,15 @@
    
     <!-- will be a 404 during development -->
     <script src="cordova.js"></script>
-
+    
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-animate/angular-animate.js"></script>
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
-    <script src="bower_components/ionic/release/js/ionic.js"></script>
-    <script src="bower_components/ionic/release/js/ionic-angular.js"></script>
-    <script src="bower_components/pdfjs-dist/build/pdf.js"></script>
-    <script src="bower_components/pdfjs-dist/build/pdf.worker.js"></script>
+    <script src="bower_components/ionic/js/ionic.js"></script>
+    <script src="bower_components/ionic/js/ionic-angular.js"></script>
     <script src="bower_components/ngCordova/dist/ng-cordova.js"></script>
     <script src="bower_components/angular-dynamic-locale/src/tmhDynamicLocale.js"></script>
     <script src="bower_components/angular-translate/angular-translate.js"></script>
@@ -54,21 +54,26 @@
     <script src="bower_components/swiper/dist/js/swiper.js"></script>
     <script src="bower_components/angular-swiper/dist/angular-swiper.js"></script>
     <script src="bower_components/ionic-modal-select/dist/ionic-modal-select.js"></script>
-    <script src="bower_components/pdfmake/build/pdfmake.js"></script>
-    <script src="bower_components/pdfmake/build/vfs_fonts.js"></script>
-    <script src="bower_components/angular-pdf/dist/angular-pdf.js"></script>
-    <script src="bower_components/chance/chance.js"></script>
+    <script src="bower_components/moment/moment.js"></script>
+    <script src="bower_components/angular-moment/angular-moment.js"></script>
+    <script src="bower_components/ng-lodash/build/ng-lodash.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
-
+   
     <!-- build:js scripts/app.js -->
     <!-- inject:js -->
+    <script src="modules/home/home.tidak-setuju/home.tidak-setuju.module.js"></script>
+    <script src="modules/home/home.tidak-setuju/home.tidak-setuju.controller.js"></script>
+    <script src="modules/home/home.setuju/home.setuju.module.js"></script>
+    <script src="modules/home/home.setuju/home.setuju.controller.js"></script>
     <script src="modules/home/home.semakan/home.semakan.module.js"></script>
     <script src="modules/home/home.semakan/home.semakan.controller.js"></script>
     <script src="modules/home/home.resources/home.resources.module.js"></script>
+    <script src="modules/home/home.resources/home.resources.item.controller.js"></script>
     <script src="modules/home/home.resources/home.resources.controller.js"></script>
     <script src="modules/home/home.module.js"></script>
     <script src="modules/home/home.history/home.history.module.js"></script>
+    <script src="modules/home/home.history/home.history.controller.js"></script>
     <script src="modules/account/account.welcome/account.welcome.module.js"></script>
     <script src="modules/account/account.module.js"></script>
     <script src="core/main.module.js"></script>

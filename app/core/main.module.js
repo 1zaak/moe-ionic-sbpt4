@@ -8,10 +8,10 @@ angular.module('app.core', [
   'ionic.contrib.ui.hscrollcards',
   'ksSwiper',
   'ionic-modal-select',
-  'pdf'
+  'angularMoment',
+  'ngLodash',
 ])
   .config(function ($stateProvider, $urlRouterProvider) {
-
     // ROUTING with ui.router
     $urlRouterProvider.otherwise('/welcome');
     $stateProvider

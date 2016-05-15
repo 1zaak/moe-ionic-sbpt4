@@ -1,10 +1,23 @@
-<ion-view view-title="HISTORY">
-    <ion-nav-bar class="bar-positive" align-title="center">
-        <ion-nav-back-button></ion-nav-back-button>
-    </ion-nav-bar>
+<ion-view>
+    
+  <ion-nav-buttons side="primary">
+       <h3 class="custom-title">HISTORY</h3>
+    </ion-nav-buttons>
     <ion-content layout="column" overflow-scroll="true">
-       <ion-list><ion-item href="#">Semakan pada 10 Dis, 2015</ion-item>
-       <ion-item href="#">Semakan pada 11 Dis, 2015</ion-item></ion-list>
+        <h4 class="login-text" ng-hide="{{ctrl.saved.length > 0}}">REFRESH <a class="icon ion-refresh" ng-click="ctrl.load()"></a> <i class="del-icon zmdi zmdi-delete"
+                       ng-click="ctrl.deleteAll()"></i></h4>
+        <ion-list show-delete="ctrl.shouldShowDelete" class="list" ng-show="ctrl.saved.length > 0">
+       
+            <ion-item ng-repeat="save in ctrl.saved" class="item item-button-right">{{save.key}}
+              
+                    
+            </ion-item>
 
+            
+
+            <!-- <ion-item class="item item-icon-right" href="#" ng-repeat="save in ctrl.saved"><a ui-sref="home.resources.item({agiliran: save.agiliran, nokp: save.nokp, nama: save.nama, nama_sek: save.nama_sek, nama_sbp: save.nama_sbp, ket_aliran: save.ket_aliran, kodtel: save.kodtel, notel: save.notel})" class="search-nama" >{{save}}
+                <a class="icon ion-close-round" ng-click="ctrl.delete(save._id)"></a>
+            </ion-item> -->
+        </ion-list>
     </ion-content>
 </ion-view>

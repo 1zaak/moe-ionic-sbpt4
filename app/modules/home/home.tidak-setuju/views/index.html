@@ -1,0 +1,60 @@
+<ion-view view-title="TAHNIAH">
+    <ion-nav-bar class="bar-positive" align-title="center">
+        <ion-nav-back-button></ion-nav-back-button>
+    </ion-nav-bar>
+    <ion-content data-tap-disabled="true" layout="column" overflow-scroll="true">
+        <div flex-xs flex-gt-xs="50" layout="column">
+            <md-card>
+                <md-card-image><img ng-src="core/assets/images/tahniah.jpeg" alt="Tahniah"></md-card-image>
+                <md-card-title>
+                    <md-card-title-text>
+                        <span class="md-headline">TAHNIAH!</span>
+                    </md-card-title-text>
+                </md-card-title>
+                <md-card-content class="md-card-content">
+                    <p>Anda ditawarkan ke tingkatan empat (4) Sekolah Berasrama Penuh tahun 2016 Kementerian Pendidikan Malaysia
+                        <ul>
+                            <li>
+                                <b>ANGKA GILIRAN:</b> {{ctrl.peribadi.AGILIRAN}}
+                            </li>
+                            <li>
+                                <b>NO MYKAD:</b> {{ctrl.peribadi.NOKP}}
+                            </li>
+                            <li>
+                                <b>NAMA:</b> {{ctrl.peribadi.NAMA}}
+                            </li>
+                            <li></li>
+                            <li>
+                                <b>SEKOLAH ASAL:</b> {{ctrl.peribadi.NAMA_SEK}}
+                            </li>
+                            <li>
+                                <b>NAMA SBP DITAWARKAN:</b> {{ctrl.peribadi.NAMA_SBP}}
+                            </li>
+                            <li>
+                                <b>ALIRAN:</b> {{ctrl.peribadi.KET_ALIRAN}}
+                            </li>
+                            <li>
+                                <b>ALAMAT:</b> {{ctrl.peribadi.ALAMAT1}}, {{ctrl.peribadi.ALAMAT2}}, {{ctrl.peribadi.ALAMAT3}}
+                            </li>
+                            <li>
+                                <b>POSKOD:</b> {{ctrl.peribadi.POSKOD}} 
+                            </li>
+                            <li>
+                                <b>BANDAR, NEGERI:</b> {{ctrl.peribadi.NEGERI}}
+                            </li>
+                            <li>
+                               <b>NO. TELEFON:</b> {{ctrl.peribadi.NOTEL}}
+                            </li>
+                        </ul>
+                    </p>
+                    <p style="color: red; font-weight: bold; text-align: center;">Tarikh Daftar: 15 FEBRUARY, 2016 (ISNIN)</p>
+                    <p style="font-weight: bold; text-align: center;">ANDA TIDAK BERSETUJU MENERIMA TAWARAN INI</p>
+                    <md-card-actions class="actions" layout="row" layout-align="end center">
+                        <md-button class="md-raised md-primary" ui-sref="home.semakan">Kembali</md-button>
+                        <md-button class="md-raised md-primary" ui-sref="home.history">History</md-button>
+                    </md-card-actions>
+                </md-card-content>
+            </md-card>
+        </div>
+    </ion-content>
+</ion-view>

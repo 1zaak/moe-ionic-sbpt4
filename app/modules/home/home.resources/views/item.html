@@ -1,0 +1,65 @@
+<ion-view>
+   <ion-nav-buttons side="primary">
+       <h3 class="custom-title">TAHNIAH</h3>
+    </ion-nav-buttons>
+    <ion-content data-tap-disabled="true" layout="column" overflow-scroll="true">
+        <div flex-xs flex-gt-xs="50" layout="column">
+            <md-card>
+                <md-card-image><img ng-src="core/assets/images/tahniah.jpeg" alt="Tahniah"></md-card-image>
+                <md-card-content class="md-card-content">
+                    <p>Anda ditawarkan ke tingkatan empat (4) Sekolah Berasrama Penuh tahun 2016 Kementerian Pendidikan Malaysia
+                        <ul>
+                            <li>
+                                <b>ANGKA GILIRAN:</b> {{ctrl.peribadi.AGILIRAN}}
+                            </li>
+                            <li>
+                                <b>NO MYKAD:</b> {{ctrl.peribadi.NOKP}}
+                            </li>
+                            <li>
+                                <b>NAMA:</b> {{ctrl.peribadi.NAMA}}
+                            </li>
+                            <li></li>
+                            <li>
+                                <b>SEKOLAH ASAL:</b> {{ctrl.peribadi.NAMA_SEK}}
+                            </li>
+                            <li>
+                                <b>NAMA SBP DITAWARKAN:</b> {{ctrl.peribadi.NAMA_SBP}}
+                            </li>
+                            <li>
+                                <b>ALIRAN:</b> {{ctrl.peribadi.KET_ALIRAN}}
+                            </li>
+                            <li>
+                                <b>ALAMAT:</b>
+                            </li>
+                            <li>
+                                <b>POSKOD:</b>
+                            </li>
+                            <li>
+                                <b>BANDAR, NEGERI:</b> {{ctrl.peribadi.NAMA}}
+                            </li>
+                            <li>
+                                  <b>NO. TELEFON:</b> {{ctrl.peribadi.NOTEL}}
+                            </li>
+                        </ul>
+                    </p>
+                    <p style="color: red; font-weight: bold; text-align: center;">Tarikh Daftar: 15 FEBRUARY, 2016 (ISNIN)</p>
+                    <p style="font-weight: bold; text-align: center;">ANDA TELAH BERSETUJU MENERIMA TAWARAN INI</p>
+                    <md-card-actions class="actions" layout="row" layout-align="space between">
+                        
+                       <div ng-click="ctrl.openSurat()"> <md-button class="md-icon-button md-primary" aria-label="Surat Tawaran">
+                            <md-icon md-svg-icon="core/assets/images/icon/pdf-letter.svg"></md-icon>
+                        </md-button><span class="text-surat">SURAT TAWARAN</span></div>
+                        <div ng-click="ctrl.openBuku()"><md-button  class="md-icon-button md-primary" aria-label="Buku Tawaran">
+                            <md-icon md-svg-icon="core/assets/images/icon/pdf-book.svg"></md-icon>
+                        </md-button><span class="text-buku">BUKU TAWARAN</span>
+                        </div>
+                       
+                    </md-card-actions>
+                    <md-card-actions class="actions" layout="row" layout-align="center center">
+                    <md-button ng-click="ctrl.exit()" class="md-raised md-primary">Kembali</md-button>
+                    </md-card-actions>
+                </md-card-content>
+            </md-card>
+        </div>
+    </ion-content>
+</ion-view>

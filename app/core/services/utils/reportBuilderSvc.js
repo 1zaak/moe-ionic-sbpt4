@@ -8,17 +8,18 @@
 // has a nice playground for drafting your report pieces.  My plan is to share the ionic-pdf
 // so users can incorporate PDF generation and focus on creating their docDefs and using ionic-pdf
 // to easily render
-(function() {
-  'use strict';
+'use strict';
+(function () {
+
   // attach the factories and service to the [starter.services] module in angular
   angular.module('app.core')
     .service('ReportBuilderSvc', reportBuilderService);
 
-  function reportBuilderService() {
+  function reportBuilderService () {
     var self = this;
 
     self.generateReport = _generateReport;
-    function _generateReport() {
+    function _generateReport () {
       //create an array of progress for the (6) categories presented
       var completions = [(Math.random() * 100).toFixed(1),
         (Math.random() * 100).toFixed(1),
@@ -54,10 +55,10 @@
                   text: 'Core Check Category',
                   style: 'tableHeader'
                 },
-                  {
-                    text: 'Completion',
-                    style: 'tableHeader'
-                  }],
+                {
+                  text: 'Completion',
+                  style: 'tableHeader'
+                }],
                 [['English Requirement', {
                   canvas: [{
                     type: 'rect',
@@ -148,6 +149,5 @@
           }]
       };
     }
-    ;
   }
 })();

@@ -1,0 +1,11 @@
+<ion-modal-view>
+    <ion-header-bar align-title="center">
+        <h1 class="title" >BUKU TAWARAN</h1>        
+        <button ng-click="ctrl.modal.hide()" class="button button-icon icon ion-android-close"></button>
+         <button ng-click="ctrl.modal.save()" class="button button-icon icon ion-android-archive"></button>
+    </ion-header-bar>
+    <ion-content class="has-header">
+        <ng-pdf class="container-pdf" ng-if="pdfUrl" template-url="modules/home/home.setuju/views/pdf-viewer.html" canvasid="pdf" scale="page-fit"></ng-pdf>  
+        
+    </ion-content>
+</ion-modal-view>

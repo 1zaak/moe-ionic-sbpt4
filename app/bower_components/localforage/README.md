@@ -1,4 +1,4 @@
-# localForage [![Build Status](https://secure.travis-ci.org/mozilla/localForage.png?branch=master)](http://travis-ci.org/mozilla/localForage)
+# localForage [![Build Status](https://travis-ci.org/mozilla/localForage.svg?branch=master)](http://travis-ci.org/mozilla/localForage)
 
 localForage is a fast and simple storage library for JavaScript. localForage
 improves the offline experience of your web app by using asynchronous storage
@@ -38,7 +38,7 @@ Lost? Need help? Try the
 
 If you're stuck using the library, running the tests, or want to contribute
 to localForage, you can visit
-[irc.mozilla.org](https://wiki.mozilla.org/IRC) and head to the `#apps`
+[irc.freenode.net](https://freenode.net/) and head to the `#localforage`
 channel to ask questions about localForage.
 
 The best person to ask about localForage is [**tofumatt**][tofumatt], who
@@ -208,8 +208,12 @@ installed (eg. `npm install --save-dev babel-plugin-system-import-transformer`).
 To import localForage in TypeScript:
 
 ```javascript
-import {default as localforage} from "localforage"
+const localForage:LocalForage = require("localforage");
 ```
+
+Note that the ES6 style import is not supported for our module type. Check out the following to know why:
+* http://stackoverflow.com/questions/29596714/new-es6-syntax-for-importing-commonjs-amd-modules-i-e-import-foo-require
+* http://www.jbrantly.com/es6-modules-with-typescript-and-webpack/
 
 ## Framework Support
 
@@ -236,9 +240,8 @@ There is a [list of custom drivers on the wiki][custom drivers].
 
 # Working on localForage
 
-You'll need [node/npm](http://nodejs.org/),
-[bower](http://bower.io/#installing-bower), and
-[Grunt](http://gruntjs.com/getting-started#installing-the-cli).
+You'll need [node/npm](http://nodejs.org/) and
+[bower](http://bower.io/#installing-bower).
 
 To work on localForage, you should start by
 [forking it](https://github.com/mozilla/localForage/fork) and installing its
@@ -246,8 +249,8 @@ dependencies. Replace `USERNAME` with your GitHub username and run the
 following:
 
 ```bash
-# Install bower and grunt globally if you don't have them:
-npm install -g bower grunt-cli
+# Install bower globally if you don't have it:
+npm install -g bower
 
 # Replace USERNAME with your GitHub username:
 git clone git@github.com:USERNAME/localForage.git

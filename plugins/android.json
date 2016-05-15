@@ -6,6 +6,35 @@
     "config_munge": {
         "files": {}
     },
-    "installed_plugins": {},
-    "dependent_plugins": {}
+    "installed_plugins": {
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.izaak.my"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.izaak.my"
+        },
+        "com.ionic.keyboard": {
+            "PACKAGE_NAME": "com.izaak.my"
+        },
+        "cordova-plugin-network-information": {
+            "PACKAGE_NAME": "com.izaak.my"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "com.izaak.my"
+        },
+        "com.lampa.startapp": {
+            "PACKAGE_NAME": "com.izaak.my"
+        },
+        "cordova-plugin-file-transfer": {
+            "PACKAGE_NAME": "com.izaak.my"
+        },
+        "cordova-plugin-file-opener2": {
+            "PACKAGE_NAME": "com.izaak.my"
+        }
+    },
+    "dependent_plugins": {
+        "cordova-plugin-file": {
+            "PACKAGE_NAME": "com.izaak.my"
+        }
+    }
 }

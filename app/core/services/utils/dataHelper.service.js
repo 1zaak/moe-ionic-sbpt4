@@ -17,6 +17,17 @@
         .success(deferred.resolve)
         .error(deferred.reject);
 
+      // $http({
+      //   method: 'JSONP',
+      //   url: AppSettings.API_URL + '/sst4/' + value
+      // }).get(AppSettings.API_URL + '/sst4/' + value)
+      //   .success(deferred.resolve)
+      //   .error(deferred.reject);
+        // $http
+        //   .get('http://jsonplaceholder.typicode.com/')
+        //   .success(deferred.resolve)
+        //   .error(deferred.reject);
+
       return deferred.promise;
     };
 
@@ -31,27 +42,13 @@
       return deferred.promise;
     };
 
-    // service.getCalon = function (value) {
-    //   var deferred = $q.defer();
+    service.pushLocal = function (item) {
+      localStorage.setItem(item);
+    };
 
-    //   $http
-    //     .get(AppSettings.API_URL + '/calons/' + value)
-    //     .success(deferred.resolve)
-    //     .error(deferred.reject);
-
-    //   return deferred.promise;
-    // };
-
-    // service.getSbp = function (value) {
-    //   var deferred = $q.defer();
-
-    //   $http
-    //     .get(AppSettings.API_URL + '/calons/' + value)
-    //     .success(deferred.resolve)
-    //     .error(deferred.reject);
-
-    //   return deferred.promise;
-    // };
+    service.setLogoutToken = function () {
+      sessionStorage.setItem('loggedIn', 'notLoggedIn');
+    };
 
     return service;
   }

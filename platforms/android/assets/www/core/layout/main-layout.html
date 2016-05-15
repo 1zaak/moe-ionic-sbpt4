@@ -1,1 +1,17 @@
-<ion-nav-bar class=bar-royal><ion-nav-back-button></ion-nav-back-button></ion-nav-bar><ion-tabs class="tabs-icon-top tabs-custom"><ion-tab title=Home icon-off=ion-ios-home-outline icon-on=ion-ios-home ui-sref=home.semakan><ion-nav-view name=tab-home></ion-nav-view></ion-tab><ion-tab title=History icon-off=ion-ios-clock-outline icon-on=ion-ios-clock ui-sref=home.history><ion-nav-view name=tab-history></ion-nav-view></ion-tab></ion-tabs>
+<ion-nav-bar class="bar-positive">
+   <ion-nav-buttons side="left">
+        <div class="icon-top"><img src="core/assets/images/icon/icon.png" class="img-responsive"></div>
+    </ion-nav-buttons>
+</ion-nav-bar>  
+<ion-tabs class="tabs-icon-top tabs-custom">
+    <!-- List Tab -->
+    <ion-tab title="Home" icon-off="ion-ios-home-outline" icon-on="ion-ios-home" ui-sref="home.semakan">
+        <ion-nav-view name="tab-home"></ion-nav-view>
+    </ion-tab>
+    <!-- <ion-tab title="Resources" icon-off="ion-ios-book-outline" icon-on="ion-ios-book" ui-sref="home.resources">
+        <ion-nav-view name="tab-resources"></ion-nav-view>
+    </ion-tab> -->
+    <ion-tab title="History" icon-off="ion-ios-clock-outline" icon-on="ion-ios-clock" ui-sref="home.history">
+        <ion-nav-view name="tab-history"></ion-nav-view>
+    </ion-tab>
+</ion-tabs>

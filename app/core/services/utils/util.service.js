@@ -25,7 +25,6 @@ angular.module('app.core')
       }
     };
 
-
     return api;
 
   });
